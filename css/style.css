@@ -1,0 +1,886 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    -webkit-font-smoothing:antialiased;  
+    /* height: 8000px; */
+    /* background: var(--light); */
+}
+
+body span{
+    color: black;
+}
+
+.btn{
+    font-family: "Railway-semibold";
+    font-size: 1.2rem;
+    color: var(--light);
+    padding: .8rem .75rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    line-height: 0.8;
+    background-color: var(--secondary);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    background-color: var(--heaven);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.btn-primary{    
+    background-color: var(--primary);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover{
+    color: var(--primary);
+    background-color: var(--heaven);
+    border: 1px solid var(--primary);
+}
+
+.section-headings{
+    font-family: "Railway-bold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.section-headings::after{
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    height: 30px;
+}
+
+.display-flex{
+    display: flex;
+}
+.flex-1{
+    flex: 1;
+}
+
+.aline-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.text-center{
+    text-align: center;
+}
+
+.text-pure{
+    color: var(--pure);
+}
+
+body p{
+    line-height: 1.6rem;
+}
+/* fonts */
+
+@font-face {
+    font-family: "Railway-regular";
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Railway-medium";
+    src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Railway-bold";
+    src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Railway-semibold";
+    src: url(../fonts/Raleway-SemiBold.ttf);
+}
+@font-face {
+    font-family: "Railway-black";
+    src: url(../fonts/Raleway-Black.ttf);
+}
+@font-face {
+    font-family: "Railway-extrabold";
+    src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+
+/* colors */
+
+:root{
+    --primary: #EEBF00;
+    --secondary: #232B38;
+    --ternary: #6C6C6C;
+    --danger: #FE4545;
+    --pure: #FEFEFE;
+    --light: #F0F0F0;
+    --heaven: #FFFFFF;
+    --footer: #2D333F;
+}
+
+/* container */
+
+.container{
+    width: 100%;
+    padding: o 15px;
+    margin: 0 auto;
+}
+
+@media(min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+}
+@media(min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        max-width: 1152px;
+    }
+}
+
+/* -----------header------------ */
+
+header.topbar{
+    background: var(--secondary);
+    color: var(--pure);
+    font-family: "Railway-semibold";
+}
+
+header.topbar .auth > div a, span{
+    color: var(--pure);
+    text-decoration: none;
+}
+
+header.topbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem 0px;
+}
+header.topbar .icons a{
+    margin-right: .6rem;
+}
+header.topbar .container .auth{
+    display: flex;
+}
+header.topbar .container .auth .divider{
+    margin: 0 1rem;
+}
+header.topbar .container .auth> div img{
+    margin-right: .35rem;
+}
+
+
+/* ----------nav---------- */
+
+nav .top .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+nav .top .contact, .time{
+    display: flex;
+    align-items: center;
+}
+
+nav .top .contact div, .time div{
+    margin-left: 1rem;
+}
+
+nav .top .contact h5, .time h5{
+    font-family: "Railway-black"; 
+    margin-bottom: .25rem;
+}
+
+nav .top .contact h6, .time h6{
+    font-family: "Railway-medium"; 
+    letter-spacing: .055rem;
+    font-size: .75rem;
+    color: var(--ternary);
+}
+
+nav .navbar .container{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+nav .navbar a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Railway-semibold";
+    color: var(--secondary);
+    padding: 1rem 1.5rem;
+    transition: all .3s ease;
+}
+nav .navbar a.active{
+    background-color: var(--primary);
+    color: var(--heaven);
+}
+nav .navbar a:hover{
+    background-color: var(--primary);
+    color: var(--heaven);
+}
+.magic-shadow{
+    position: relative;
+    background-color: var(--heaven);
+}
+.magic-shadow::after{
+    background-image: url(../icons/shadow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -22px;
+    content: '';
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 69px;
+}
+
+
+/* ----------nav end---------- */
+
+header.hero{
+    background-image: url(../images/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+header.hero .container{
+    position: relative;
+}
+
+header.hero .container h1{
+    font-family: "Railway-extrabold";
+    color: var(--secondary);
+    font-size: 2.5rem;
+    padding: .3rem 0;
+    /* letter-spacing: .1rem; */
+}
+header.hero .container h1 span{
+    font-family: "Railway-extrabold";
+    color: var(--primary);
+    font-size: 2.5rem;
+}
+header.hero .welcome{
+    display: flex;
+    align-items: center;
+}
+header.hero .welcome span{ 
+    font-family: "Railway-bold"; 
+    color: var(--secondary);
+    margin-right: .75rem;
+}
+
+header.hero .container p{
+    font-family: "Railway-medium";
+    width: 50%;
+    line-height: 1.5rem;
+    /* margin-bottom: 1rem; */
+    padding: .5rem 0;
+}
+
+
+header.hero .container .read{
+    background-color: var(--primary);
+    margin-right: .5rem;
+}
+
+header.hero .container .read:hover{
+    color: var(--primary);
+    background-color: var(--heaven);
+    border: .5px solid var(--primary);
+}
+
+
+header.hero .hero-image{
+    position: absolute;
+    top: -40px;
+    right: 4rem;
+}
+
+
+/* --------------top-products Section--------------- */
+
+section{
+    padding: 4rem 0;
+}
+
+section.top-products .slider{
+    position: relative;
+}
+/* ------------- Food Slider ------------ */
+
+section.top-products{
+    background-color: var(--light);
+}
+
+section.top-products .food-slider .food-card{
+    background-color: var(--heaven);
+    padding: 1.5rem 0;
+    border-radius: 4px;
+}
+
+section.top-products .food-slider .food-card h2{
+    font-family: "Railway-bold"; 
+}
+
+section.top-products .food-slider .food-card .product-image img{
+    width: 80%;
+    height: 180px;
+    object-fit: contain;
+}
+
+section.top-products hr{
+     border: 1px solid var(--light);
+     opacity: .8;
+     margin-top: 2.5rem;
+     margin-bottom: 1.5rem;
+}
+
+section.top-products .food-slider .food-card .stars img{ margin-right: .25rem; }
+
+section.top-products .food-slider .food-card .price{
+    font-family: "Railway-medium";
+    color: var(--danger);
+    margin: .9rem 0;
+}
+
+section.top-products .food-slider .food-card button{
+    background: var(--heaven);
+    border: 2px solid var(--primary);
+    width: 50%;
+    cursor: pointer;
+    transition: all.3s ease;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-family: "Railway-medium";
+    color: var(--secondary);
+    font-size: 1rem;
+}
+
+.food-slider .food-card button img{
+    background: var(--primary);
+    padding: .5rem;
+    margin-right: 1.2rem;
+}
+
+section.top-products .food-slider .food-card button:hover{
+    background: var(--primary);
+    color: var(--heaven);
+}
+
+section.top-products .btn-wrapper{
+    margin-top: 3.5rem;
+}
+
+.slick-slide{
+    margin: 0 27px;
+}
+
+.slick-list{
+    margin: 0 -27px;
+}
+
+.slick-track{
+    padding: 1rem 0;
+}
+
+.slider .slider-button{
+    background: var(--primary);
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+}
+
+.slider .prev-btn{
+    position: absolute;
+    top: 46%;
+    left: -3rem;
+}
+
+.slider .next-btn{
+    position: absolute;
+    top: 46%;
+    right: -3rem;
+}
+
+.magic-shadow-sm{
+    position: relative;
+    background-color: var(--heaven);
+}
+.magic-shadow-sm::after{
+    background-image: url(../icons/shadow-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -20px;
+    content: '';
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 69px;
+}
+
+
+/* --------------- About Section --------------- */
+
+.about{
+    background: var(--heaven);
+    /* height: 610px; */
+}
+
+section.about .about-image img{
+    width: 85%;
+}
+
+section.about h2{
+    font-family: "Railway-bold";
+    font-size: 1.4rem;
+    color: var(--secondary);
+    /* letter-spacing: .5px; */
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+section.about p{
+    font-family: "Railway-regular";
+    line-height: 1.7;
+    margin-bottom: 4rem;
+}
+
+
+/* --------------- Our Service Section --------------- */
+
+section.our-services{
+    background: var(--light);
+    position: relative;
+    z-index: 0;
+}
+
+section.our-services .service-card{
+    background: var(--heaven);
+    text-align: center;
+    padding: 2rem;
+    padding-top: 4rem;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 2rem; 
+}
+
+section.our-services .card-wrapper{
+    margin-right: -2rem;
+    margin-top: 8rem;
+}
+
+section.our-services .service-card .icon{
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.our-services .service-card h2{
+    font-family: "Railway-bold";
+    font-size: 1.3rem;
+    /* color: var(--secondary); */
+    margin-bottom: 1rem;
+}
+
+section.our-services .primary h2{
+    color: var(--primary);
+}
+
+section.our-services .service-card p{
+    font-family: "Railway-regular";
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.magic-shadow-sm2{
+    position: relative;
+    background-color: var(--heaven);
+}
+.magic-shadow-sm2::after{
+    background-image: url(../icons/shadow-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 69px;
+}
+
+
+
+/* -------------------Big Deal------------------ */
+
+section.big-deal{
+    background: linear-gradient(rgba(35,43,56,.9), rgba(35,43,56, 0.9)), url(../images/food-table.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+section.big-deal .timer span:first-child{
+    color: var(--heaven);
+    font-family: "Railway-semibold";
+    font-size: 2.5rem;
+    margin-bottom: .05rem;
+}
+
+section.big-deal .timer span:last-child{
+    color: var(--heaven);
+    font-family: "Railway-medium";
+}
+
+section.big-deal .timer{
+    margin-right: -2rem;
+    margin-bottom: 2rem;
+}
+
+section.big-deal .timer div{
+    margin-right: 2rem;
+    background: var(--primary);
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* -------------------Latest News------------------ */
+
+section.latest-news{
+    background: var(--light);
+    position: relative;
+    z-index: 0;
+}
+
+section.latest-news .article-wrapper .card{
+    background: var(--heaven);
+    margin-right: 2rem;
+    border-radius: 4px;
+}
+
+section.latest-news .article-wrapper .card .card-content{
+    padding: 2rem;
+}
+
+section.latest-news .article-wrapper .card .card-content h2{
+    font-family: "Railway-bold";
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+section.latest-news .article-wrapper .card .card-content .post-meta{
+    margin-bottom: 1rem;
+}
+
+section.latest-news .article-wrapper .card .card-content .post-meta .comment-count{
+    margin-left: 1rem;
+}
+
+section.latest-news .article-wrapper{
+    margin-right: -2rem;
+}
+
+section.latest-news article img{
+    width: 100%;
+}
+
+section.latest-news article p{
+    font-family: "Railway-regular";
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+section.latest-news .article-wrapper .card .card-content .post-meta span{
+    font-family: "Railway-regular";
+    color: black;
+}
+
+section.latest-news .article-wrapper .magic-shadow-sm{
+    position: relative;
+    background-color: var(--heaven);
+}
+section.latest-news .article-wrapper .magic-shadow-sm::after{
+    background-image: url(../icons/shadow-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 69px;
+}
+
+section.latest-news button{
+    margin-top: 2rem;
+}
+
+
+/* --------------Subscribe box-------------- */
+
+section.subscribe{
+    background: var(--primary);
+}
+
+section.subscribe .subs-image img{
+    width: 90%;
+}
+
+section.subscribe .subs-details h2{
+    font-family: "Railway-bold";
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section.subscribe .subs-details p{
+    font-family: "Railway-regular";
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+section.subscribe .subs-details .input-wrap{
+    display: flex;
+    background: var(--heaven);
+    padding: .3rem;
+    border-radius: 4px;
+}
+
+section.subscribe .subs-details input{
+    width: 100%;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+
+    /* padding: 1rem;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    position: relative;*/
+} 
+
+section.subscribe .subs-details button{
+    padding: .8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--primary);
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--heaven);
+
+
+    /* font-size: .99rem;
+    padding: 12px 30px;
+    position: absolute;
+    right: 124px;
+    margin-top: .27rem;
+    left: 59.9rem; */
+}
+
+section.subscribe .subs-details button:hover{
+    background: var(--secondary);
+}
+
+/* ---------------------Contact Section---------------------- */
+
+section.contact{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+section.contact .map{
+    filter: grayscale(100%);
+}
+
+section.contact .contact-info-wrapper{
+    padding: 4rem 0;
+}
+
+section.contact .contact-info > div > div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+section.contact .contact-info > div > div > img{
+    margin-right: 1rem;
+}
+
+section.contact .contact-info > div > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+section.contact .contact-info > div > div > div span:first-child{
+    font-family: "Railway-bold";
+    margin-bottom: .25rem;
+}
+
+section.contact .contact-info > div > div > div span:last-child{
+    font-family: "Railway-regular";
+}
+
+
+
+/* -----------------Footer-Top------------------ */
+
+footer{
+    background: var(--footer);
+}
+
+.footer-top .container{
+    display: flex;
+    padding: 4rem 1rem;
+}
+
+.footer-top .container .box{
+    flex: 1;
+    color: var(--heaven);
+    margin-right: 2rem;
+    width: 100%;
+}
+
+.footer-top .container .box h2{
+    font-family: "Railway-medium";
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--primary);
+}
+
+.footer-top .container .box p{
+    font-family: "Railway-regular";
+    margin-bottom: 1rem;
+}
+
+.footer-top .container .about-us button{
+    font-family: "Railway-medium";
+}
+.footer-top .container .about-us button:hover{
+    background: var(--heaven);
+    color: var(--secondary);
+}
+
+.footer-top .container .links li a{
+    text-decoration: none;
+    color: var(--heaven);
+    font-family: "Railway-regular";
+    font-size: 1rem;
+}
+
+.footer-top .container .links li{  
+    list-style: none;    
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer-top .container .follow >div{
+    margin-bottom: 1.5rem;
+    margin-left: 4rem;
+}
+
+/* .footer-top .container .follow{} */
+
+.footer-top .container .follow a{
+    text-decoration: none;
+    color: var(--heaven);
+    font-family: "Railway-regular";
+    font-size: 1rem;
+}
+
+.footer-top .container .follow img{
+    margin-right: 1rem;
+}
+
+.footer-top .post-wrapper{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.footer-top .post-wrapper{
+    width: 100%;
+}
+
+.footer-top .post-wrapper >div img{
+    width: 90%;
+    height: 85%;
+    margin-bottom: .5rem;
+}
+.footer-top .insta img{
+    width: 100%;
+}
+
+/* ------------Footer bottom------------ */
+
+.footer-bottom{
+    text-align: center;
+    background: var(--secondary);
+    padding: .5rem 0;
+    
+    border-top: 1px solid var(--ternary);
+    /* opacity: .6; */
+}
+
+.footer-bottom p{
+    font-family: "Railway-regular";
+    font-size: .8rem;
+    color: var(--heaven);
+}
+
+.footer-bottom p span{
+    color: var(--primary);
+    cursor: pointer;
+}
